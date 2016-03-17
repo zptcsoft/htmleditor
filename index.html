@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content="An simple online HTML editor with real-time preview."/>
+        <base href="." target="_blank">
+        <title>HTML Editor</title>
+        <link rel="icon" href="">
+        <link rel="stylesheet" href="styles/htmleditor.css"/>
+    </head>
+    <body>
+
+        <div class="htmleditor" id="htmleditor">
+
+            <div class="htmleditor__header">
+
+                <span class="header__item">
+                    <label for="runner">Tiempo Real</label>
+                    <input id="runner" type="checkbox" checked="1"/>
+                </span>
+
+                <span class="header__item">
+                    <a id="downloader" download="plantilla.html" href="" title="Descargar Plantilla HTML (Nota: solo se descargará el archivo html)">Descargar</a>
+                </span>
+
+                <span class="header__item">
+                    <input id="resetter" type="button" value="Limpiar"/>
+                </span>
+
+                <span class="header__item">
+                    <input id="selector" type="button" value="Seleccionar Todo"/>
+                </span>
+
+                <span class="header__item">
+                    <input id="fileChooser" type="file" accept="text/html"/>
+                </span>
+
+                <span class="header__item">
+                    <label for="resizer">Tamaño del Editor</label>
+                    <input id="resizer" type="range"/>
+                    <output id="indicator" for="resizer">0.50</output>
+                </span>
+
+                <span class="header__item">
+                    <label for="viewsToggler">Vista Horizontal</label>
+                    <input id="viewsToggler" type="checkbox"/>
+                </span>
+
+                <span class="header__item">
+                    <label for="themesToggler">Dark theme</label>
+                    <input id="themesToggler" type="checkbox"/>
+                </span>
+
+                <span class="header__item">
+                    <input id="more" type="button" value="• • •" title="More"/>
+                </span>
+
+            </div>
+
+            <div class="htmleditor__main" id="main">
+
+                <div class="main__editorWrapper main--wrapper" id="editorWrapper" style="flex-grow:50;">
+                    <textarea id="editor" spellcheck="false" name="editor" class=""></textarea>
+                </div>
+                <div class="main__viewerWrapper main--wrapper" id="viewerWrapper" style="flex-grow:50;">
+                    <iframe id="viewer"></iframe>
+                </div>
+
+            </div>
+
+            <div class="htmleditor__footer" id="footer" hidden=""></div>
+        </div>
+
+        <script src="scripts/htmleditor.js"></script>
+
+    </body>
+</html>
